@@ -28,7 +28,7 @@
   "hero": {
     "h1a": "The Paid Media agency built around",
     "h1b": "results",
-    "lead": "We think like strategists and talk straight — person to person. We're an agency based in Puebla with clients across Mexico.",
+    "lead": "We think like strategists and talk straight, person to person. We're an agency based in Puebla with clients across Mexico.",
     "cta": "Let's talk",
     "ctaSecondary": "See cases"
   },
@@ -50,7 +50,7 @@
         "title": "Total transparency: you always know what we do and why",
         "points": [
           "You'll know what we're working on, the strategy behind every ad and what results to expect.",
-          "Clear reports, in plain language, so you decide with data — not hunches."
+          "Clear reports, in plain language, so you decide with data, not hunches."
         ]
       },
       {
@@ -76,7 +76,7 @@
     "eyebrow": "Clients",
     "h2a": "They already trust",
     "h2b": "us",
-    "pending": "Logo wall pending — it gets completed once the brand files come in."
+    "pending": "Logo wall pending. It gets completed once the brand files come in."
   },
   "method": {
     "h2a": "How we",
