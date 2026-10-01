@@ -50,7 +50,7 @@ const f = t.contact.form;
         <label class="field sm:col-span-2">
           <span>{f.budget}</span>
           <select name={f.budget}>
-            <option value="" selected>—</option>
+            <option value="" selected>{f.budgetPlaceholder}</option>
             {f.budgetOptions.map((o) => <option value={o}>{o}</option>)}
           </select>
         </label>

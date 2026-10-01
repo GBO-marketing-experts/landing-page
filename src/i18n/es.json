@@ -133,6 +133,7 @@
       "whatsapp": "WhatsApp",
       "industry": "Giro de tu negocio",
       "budget": "Presupuesto mensual de pauta",
+      "budgetPlaceholder": "Selecciona un rango",
       "budgetOptions": ["$10,000 – $20,000 MXN", "$20,000 – $30,000 MXN", "$30,000 – $40,000 MXN"],
       "submit": "Hablemos",
       "mailSubject": "Nuevo prospecto desde la web GBO"

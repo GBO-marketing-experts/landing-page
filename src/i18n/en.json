@@ -133,6 +133,7 @@
       "whatsapp": "WhatsApp",
       "industry": "Your industry",
       "budget": "Monthly ad budget",
+      "budgetPlaceholder": "Select a range",
       "budgetOptions": ["$10,000 – $20,000 MXN", "$20,000 – $30,000 MXN", "$30,000 – $40,000 MXN"],
       "submit": "Let's talk",
       "mailSubject": "New lead from the GBO website"
