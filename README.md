@@ -211,13 +211,12 @@ English is a **marketing** translation, not literal — "Paid Media", "leads" an
 
 ## Hosting
 
-Live on GitHub Pages: **https://gbo-marketing-experts.github.io/landing-page/**
+Live on GitHub Pages: **https://gbomkt.github.io/**
 Every push to `main` rebuilds and deploys via `.github/workflows/deploy.yml`.
 
-`astro.config.mjs` sets `site` + `base: '/landing-page/'` (trailing slash is
-load-bearing: `import.meta.env.BASE_URL` mirrors it verbatim and every asset
-path concatenates onto it). Local dev therefore serves at
-`http://localhost:4321/landing-page/`.
+`astro.config.mjs` sets `site: 'https://gbomkt.github.io'` and `base: '/'`
+(the repo is the org's root site, so no subpath). All asset paths are
+base-aware, so a future base change is config-only.
 
 When a custom domain arrives: set `site` to the domain, `base` to `'/'`, and
 add a `public/CNAME` file — nothing else changes, all paths are base-aware.

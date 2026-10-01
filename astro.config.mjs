@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// GitHub Pages project site. When a custom domain arrives: set `site` to it,
-// change `base` to '/', and add a public/CNAME file.
+// Org root site: serves at https://gbomkt.github.io/. When a custom domain
+// arrives: change `site` to it and add a public/CNAME file; base stays '/'.
 export default defineConfig({
-  site: 'https://gbo-marketing-experts.github.io',
-  base: '/landing-page/',
+  site: 'https://gbomkt.github.io',
+  base: '/',
   vite: { plugins: [tailwindcss()] },
 });
