@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import satoshiBlack from '../fonts/Satoshi-Black.otf?url';
 import satoshiRegular from '../fonts/Satoshi-Regular.otf?url';
-const { t, lang } = Astro.props;
+const { t, lang, title = t.meta.title } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const abs = (path) => new URL(path.replace(/^\//, ''), new URL(base, Astro.site)).href;
 ---
@@ -11,7 +11,7 @@ const abs = (path) => new URL(path.replace(/^\//, ''), new URL(base, Astro.site)
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{t.meta.title}</title>
+    <title>{title}</title>
     <meta name="description" content={t.meta.description} />
     <meta name="theme-color" content="#000000" />
     <link rel="icon" href={`${base}logo-gbo-negro.png`} />
@@ -22,7 +22,7 @@ const abs = (path) => new URL(path.replace(/^\//, ''), new URL(base, Astro.site)
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={lang === 'es' ? 'es_MX' : 'en_US'} />
-    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={t.meta.description} />
     <meta name="twitter:card" content="summary_large_image" />
 

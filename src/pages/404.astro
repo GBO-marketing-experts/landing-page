@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import es from '../i18n/es.json';
+import en from '../i18n/en.json';
+// GitHub Pages serves dist/404.html for every missing URL — one page for both
+// languages, Spanish first, English offered inline.
+const base = import.meta.env.BASE_URL;
+---
+<Base t={es} lang="es" title="404 · GBO">
+  <Nav t={es} lang="es" />
+  <main id="main">
+    <section class="band py-20 md:py-28">
+      <div class="shell text-center">
+        <p class="t-display grad-text leading-[0.85]" style="font-size:clamp(7rem,26vw,17rem)">404</p>
+        <h1 class="t-display t-section mt-6">{es.notFound.title}<span class="dot">.</span></h1>
+        <p class="t-lead mx-auto mt-6 max-w-xl text-k80">{es.notFound.body}</p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <a href={base} class="pill-cta">
+            {es.notFound.cta}
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a href={`${base}en/`} class="pill" lang="en">{en.notFound.cta}</a>
+        </div>
+        <p class="mx-auto mt-10 max-w-md text-sm text-k60" lang="en">{en.notFound.body}</p>
+      </div>
+    </section>
+  </main>
+  <Footer t={es} lang="es" />
+</Base>

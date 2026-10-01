@@ -172,6 +172,11 @@
     "rights": "© 2026 GBO Marketing Experts. All rights reserved.",
     "logoAlt": "GBO Marketing Experts"
   },
+  "notFound": {
+    "title": "This page doesn't exist",
+    "body": "The link may be broken or the page moved. What you're looking for is back home.",
+    "cta": "Back to home"
+  },
   "shared": {
     "email": "hola@gbomkt.com",
     "platforms": ["Google Ads", "Meta", "Instagram", "TikTok", "LinkedIn"],
