@@ -1,0 +1,399 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Fonts — self-hosted from /opt/Fonzo/GBO. 5 faces, nothing more.
+   ponytail: shipping .otf/.ttf instead of subset woff2 (~250KB total).
+   Convert with fonttools only if LCP ever actually matters.
+   ============================================================ */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Black.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+
+/* ============================================================
+   Tokens — decoded from GBO/Paleta de colores.ai
+   ============================================================ */
+@theme {
+  /* Fondos */
+  --color-ink:       #000000;
+  --color-paper:     #FFF8F8;
+
+  /* "Puntito" — the signature accent. It is a DOT, use it as one. */
+  --color-dot:       #FF5757;
+
+  /* Brillantes */
+  --color-azul:      #38B6FF;
+  --color-naranja:   #FF914D;
+  --color-amarillo:  #FFDE59;
+  --color-violeta:   #8C52FF;
+  --color-rosa:      #C379B6;
+
+  /* Grises (K ramp) */
+  --color-k100:      #1D1D1B;
+  --color-k80:       #575756;
+  --color-k60:       #878787;
+  --color-k40:       #B2B2B2;
+  --color-k20:       #DADADA;
+  --color-k10:       #EDEDED;
+  --color-k05:       #F6F6F6;
+
+  --font-display: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+::selection { background: var(--color-dot); color: var(--color-paper); }
+
+:focus-visible {
+  outline: 2px solid var(--color-dot);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.on-ink :focus-visible { outline-color: var(--color-amarillo); }
+
+/* ============================================================
+   Type scale — oversized, editorial, left-aligned.
+   ============================================================ */
+.t-display {
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.t-hero    { font-size: clamp(2.5rem, 6vw, 5.25rem); }
+.t-section { font-size: clamp(2.125rem, 5.4vw, 4.75rem); }
+.t-sub     { font-size: clamp(1.375rem, 2.2vw, 2rem); line-height: 1.1; letter-spacing: -0.02em; font-weight: 900; }
+.t-lead    { font-size: clamp(1.0625rem, 1.35vw, 1.3125rem); line-height: 1.6; }
+
+/* Eyebrow: mono + the dot. Used once per section. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+/* The literal period in a headline, in Puntito red. */
+.dot { color: var(--color-dot); }
+
+/* ============================================================
+   Surfaces — full-bleed bands, grain so the flats aren't dead.
+   ============================================================ */
+.band { position: relative; isolation: isolate; }
+.band::after {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.on-ink { background: var(--color-ink); color: var(--color-paper); }
+.on-ink::after { opacity: 0.09; }
+
+/* Hairlines, never borders-on-boxes. */
+.rule { border-top: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent); }
+.on-ink .rule { border-top-color: color-mix(in srgb, var(--color-paper) 18%, transparent); }
+
+/* ============================================================
+   The gradient — a FIELD and a text clip. Never a button fill.
+   Exact stops from the .ai gradient function.
+   ============================================================ */
+.grad-field {
+  background: linear-gradient(135deg,
+    var(--color-violeta) 0%,
+    var(--color-rosa) 41.4%,
+    var(--color-naranja) 91.4%);
+}
+.grad-text {
+  background: linear-gradient(100deg,
+    var(--color-violeta) 0%,
+    var(--color-rosa) 41.4%,
+    var(--color-naranja) 91.4%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================================
+   Pills — the only radius on the page besides square.
+   ============================================================ */
+.pill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.6rem 1.15rem;
+  font-size: 0.9375rem;
+  line-height: 1;
+  min-height: 44px;
+  border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+.pill:hover { background: var(--color-ink); color: var(--color-paper); border-color: var(--color-ink); }
+.on-ink .pill:hover { background: var(--color-paper); color: var(--color-ink); border-color: var(--color-paper); }
+
+.pill-cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  border-radius: 9999px;
+  padding: 0.85rem 1.6rem;
+  min-height: 48px;
+  font-weight: 500;
+  line-height: 1;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border: 1px solid var(--color-ink);
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+.pill-cta:hover { transform: translateY(-2px); }
+.on-ink .pill-cta {
+  background: var(--color-amarillo);
+  color: var(--color-ink);
+  border-color: var(--color-amarillo);
+}
+
+/* ============================================================
+   Motion. All of it behind prefers-reduced-motion.
+   ============================================================ */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5rem, #000 calc(100% - 5rem), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5rem, #000 calc(100% - 5rem), transparent);
+}
+
+/* Scroll-driven reveals: zero JS, progressive enhancement.
+   Content is visible by default; the animation only exists where supported. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 8% cover 26%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track { animation: none !important; }
+  .pill-cta:hover { transform: none; }
+}
+
+/* ============================================================
+   Skip link + native <dialog> menu
+   ============================================================ */
+.skip-link {
+  position: absolute; left: 1rem; top: -100px;
+  z-index: 100;
+  background: var(--color-ink); color: var(--color-paper);
+  padding: 0.75rem 1.25rem; border-radius: 9999px;
+  transition: top 160ms ease;
+}
+.skip-link:focus { top: 1rem; }
+
+dialog.menu {
+  width: 100%; max-width: 100%;
+  height: 100%; max-height: 100%;
+  margin: 0; padding: 0; border: 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+dialog.menu::backdrop { background: rgb(0 0 0 / 0.6); }
+.menu-link {
+  display: block;
+  font-weight: 900;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  padding: 0.12em 0;
+  transition: color 160ms ease, transform 200ms ease;
+}
+.menu-link:hover { color: var(--color-amarillo); transform: translateX(10px); }
+@media (prefers-reduced-motion: reduce) { .menu-link:hover { transform: none; } }
+
+/* Layout helper: one gutter value everywhere. */
+.shell { width: 100%; max-width: 96rem; margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 5rem); }
+
+/* ============================================================
+   Client logos. The supplied files are inconsistent: some are already
+   white on transparent, some are dark art on transparent, and three are
+   dark art baked onto an opaque light background. One class each.
+   ============================================================ */
+.client-logo {
+  width: auto;
+  height: auto;
+  max-height: 2.75rem;
+  max-width: 7.5rem;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 200ms ease;
+}
+@media (min-width: 768px) {
+  .client-logo { max-height: 3.5rem; max-width: 9.5rem; }
+}
+/* Smaller cap for the top strip marquee. */
+.client-logo--sm { max-height: 1.75rem; max-width: 7rem; }
+@media (min-width: 768px) {
+  .client-logo--sm { max-height: 2rem; max-width: 7.5rem; }
+}
+.client-logo:hover { opacity: 1; }
+/* Monochrome wall: the sources carry different brand colours, grayscale unifies
+   them. filter is not additive, so each variant restates it. */
+.client-logo { filter: grayscale(1); }
+/* dark art on transparent -> flat white silhouette */
+.lt-dark { filter: grayscale(1) brightness(0) invert(1); }
+/* Three sources arrived as dark art baked onto an opaque light background;
+   scripts/whiten-logo.mjs converted them to white-on-transparent instead, which
+   keeps anti-aliased edges that a CSS invert() cannot. */
+
+/* ============================================================
+   Hero carousel — the SAMY-style full-bleed "video" moment, built
+   from stills: slow Ken Burns zoom + crossfade, zero JS.
+   5 slides x 5s = 25s cycle.
+   ============================================================ */
+.ken-frame { position: absolute; inset: 0; overflow: hidden; background: var(--color-ink); }
+.ken-slide {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 1.3s ease;
+}
+/* The active slide fades in (transition) and zooms for its whole turn (animation). */
+.ken-slide.is-on {
+  opacity: 1;
+  animation: ken-zoom 6.5s linear forwards;
+}
+@keyframes ken-zoom {
+  from { transform: scale(1.02); }
+  to   { transform: scale(1.13); }
+}
+/* Scrim so the statement stays legible over any frame. */
+.ken-scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to top, rgb(0 0 0 / 0.72) 0%, rgb(0 0 0 / 0.25) 38%, rgb(0 0 0 / 0.12) 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ken-slide.is-on { animation: none; transform: none; }
+}
+
+/* SAMY-style statement reveal: words rise out of an overflow mask. */
+.rise { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.rise + .rise { margin-left: 0.24em; }
+.rise.tight { margin-left: 0; }
+.rise > span {
+  display: inline-block;
+  transform: translateY(115%);
+  animation: rise-up 0.9s cubic-bezier(0.22, 0.61, 0.18, 1) forwards;
+  animation-delay: var(--rise-delay, 0s);
+}
+@keyframes rise-up { to { transform: translateY(0); } }
+.fade-late {
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards;
+  animation-delay: 0.9s;
+}
+@keyframes fade-in { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .rise > span { transform: none; animation: none; }
+  .fade-late { opacity: 1; animation: none; }
+}
+
+/* ============================================================
+   Scroll-triggered heading rise (the SAMY move): each heading's words
+   climb out of overflow masks once, when the section enters the viewport.
+   Gated on html.js so no-JS visitors always see the headings.
+   ============================================================ */
+.srise { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.srise > span { display: inline-block; }
+html.js [data-rise]:not(.is-in) .srise > span { transform: translateY(115%); }
+[data-rise].is-in .srise > span {
+  transform: translateY(0);
+  transition: transform 0.85s cubic-bezier(0.22, 0.61, 0.18, 1);
+  transition-delay: var(--rd, 0s);
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-rise]:not(.is-in) .srise > span { transform: none; }
+  [data-rise].is-in .srise > span { transition: none; }
+}
+
+/* ============================================================
+   Contact form — hairline fields on the black band, no boxes.
+   ============================================================ */
+.field { display: flex; flex-direction: column; gap: 0.45rem; }
+.field > span {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+.field input,
+.field select {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-paper) 30%, transparent);
+  padding: 0.5rem 0;
+  font: inherit;
+  color: var(--color-paper);
+  border-radius: 0;
+  min-height: 44px;
+}
+.field select { appearance: none; }
+.field select option { color: var(--color-ink); }
+.field input:focus-visible,
+.field select:focus-visible {
+  outline: none;
+  border-bottom-color: var(--color-dot);
+}

@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "lang": "es",
+    "title": "Agencia de Paid Media en Puebla | GBO",
+    "description": "Agencia de Paid Media en Puebla. Campañas en Google Ads, Meta, TikTok y LinkedIn medidas en ventas, no en likes. Trabajas directo con los socios.",
+    "skip": "Saltar al contenido principal"
+  },
+  "nav": {
+    "why": "Por qué nosotros",
+    "services": "Servicios",
+    "cases": "Casos de éxito",
+    "contact": "Hablemos",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú",
+    "menuTitle": "Menú",
+    "langTitle": "Idioma",
+    "langEs": "Español",
+    "langEn": "English"
+  },
+  "strip": {
+    "eyebrow": "Agencia de Paid Media en Puebla",
+    "tagline": "Llegas por el equipo. Te quedas por los resultados."
+  },
+  "carousel": {
+    "h": "Somos GBO",
+    "sub": "Una agencia con base en Puebla y clientes en todo México."
+  },
+  "hero": {
+    "h1a": "La agencia de Paid Media que piensa en",
+    "h1b": "resultados",
+    "lead": "Pensamos como estrategas y te hablamos claro, de persona a persona. Somos una agencia con base en Puebla y clientes en todo México.",
+    "cta": "Hablemos",
+    "ctaSecondary": "Ver casos"
+  },
+  "reasons": {
+    "h2a": "Por qué elegir a",
+    "h2b": "GBO",
+    "sub": "Cuatro razones para empezar.",
+    "items": [
+      {
+        "n": "01",
+        "title": "Hablamos en ventas, no en likes",
+        "points": [
+          "No celebramos likes ni entregamos reportes de vanidad. Medimos en prospectos calificados, ventas y retorno sobre tu inversión.",
+          "Optimizamos cada semana para que cada peso trabaje en cada plataforma y cada etapa del embudo."
+        ]
+      },
+      {
+        "n": "02",
+        "title": "Transparencia total: siempre sabes qué hacemos y por qué",
+        "points": [
+          "Sabrás en qué trabajamos, qué estrategia hay detrás de cada anuncio y qué resultados esperar.",
+          "Reportes claros, en tu idioma, para decidir con datos y no con corazonadas."
+        ]
+      },
+      {
+        "n": "03",
+        "title": "Estamos en todas las plataformas que importan",
+        "points": [
+          "Tu cliente ideal no usa una sola plataforma, y nosotros tampoco. Coordinamos campañas en Google Ads, Meta Ads, TikTok Ads y LinkedIn Ads para que tu marca esté presente en el lugar y momento correctos.",
+          "No lanzamos anuncios sueltos; creamos estrategias que conectan todos los puntos de contacto para maximizar los resultados desde el primer clic hasta el cierre de la venta."
+        ]
+      },
+      {
+        "n": "04",
+        "title": "Trabajas directo con los socios",
+        "points": [
+          "Cada cuenta tiene un socio responsable que conoce tu negocio de principio a fin. Sin juniors intermedios ni cambios de ejecutivo cada tres meses.",
+          "Aquí no se improvisa con tu dinero: se analiza, se ejecuta y se optimiza."
+        ]
+      }
+    ],
+    "cta": "Hablemos"
+  },
+  "clients": {
+    "eyebrow": "Clientes",
+    "h2a": "Ya confían en",
+    "h2b": "nosotros",
+    "pending": "Muro de logos pendiente — se completa al recibir los archivos de marca."
+  },
+  "method": {
+    "h2a": "Así",
+    "h2b": "trabajamos",
+    "steps": [
+      {
+        "label": "Paso 1",
+        "title": "Diagnóstico",
+        "points": [
+          "Revisamos tus campañas, tu sitio y tus números para saber qué funciona y qué te está costando dinero sin resultados."
+        ]
+      },
+      {
+        "label": "Paso 2",
+        "title": "Estrategia",
+        "points": [
+          "Analizamos tu mercado, a tu competencia y a tu cliente ideal para definir dónde invertir y con qué mensaje."
+        ]
+      },
+      {
+        "label": "Paso 3",
+        "title": "Lanzamiento y pruebas",
+        "points": [
+          "Creamos los anuncios, probamos variantes y ajustamos desde la primera semana. Una campaña nunca está terminada."
+        ]
+      },
+      {
+        "label": "Paso 4",
+        "title": "Medición y reporte",
+        "points": [
+          "Cada mes te presentamos qué se invirtió, qué regresó y qué haremos después."
+        ]
+      }
+    ],
+    "cta": "Hablemos"
+  },
+  "platforms": {
+    "h2a": "Google Ads + Social Ads:",
+    "h2b": "lo damos todo",
+    "sub": "Donde están tus clientes, ahí están nuestras campañas."
+  },
+  "contact": {
+    "h2a": "Queremos",
+    "h2b": "conocerte",
+    "body": [
+      "Cuéntanos a qué se dedica tu empresa, qué quieres lograr y qué has intentado hasta ahora.",
+      "Te respondemos en menos de 24 horas hábiles con una primera propuesta de cómo podemos ayudarte."
+    ],
+    "writeUs": "Escríbenos",
+    "cta": "Hablemos",
+    "form": {
+      "name": "Nombre",
+      "company": "Empresa",
+      "whatsapp": "WhatsApp",
+      "industry": "Giro de tu negocio",
+      "budget": "Presupuesto mensual de pauta",
+      "budgetOptions": ["$10,000 – $20,000 MXN", "$20,000 – $30,000 MXN", "$30,000 – $40,000 MXN"],
+      "submit": "Hablemos",
+      "mailSubject": "Nuevo prospecto desde la web GBO"
+    }
+  },
+  "cases": {
+    "h2a": "Hablamos con números, no con",
+    "h2b": "promesas",
+    "lead": "Estos son algunos de los negocios que hemos ayudado a crecer con Paid Media enfocado en rentabilidad.",
+    "videos": [
+      { "n": "Video 01", "client": "Centro Diagnóstico Mena" },
+      { "n": "Video 02", "client": "Colegio Le Bret / Valeria Segura" }
+    ],
+    "playLabel": "Reproducir video de",
+    "videoPending": "Video pendiente"
+  },
+  "results": {
+    "h2a": "Éxito medido en",
+    "h2b": "resultados",
+    "figure": "+10x",
+    "figureCaption": "Lo que regresó cada peso invertido.",
+    "figureDetail": "Home is Cool: $472,650 MXN en inscripciones con $42,000 MXN de inversión, en 3 meses.",
+    "case": [
+      { "label": "Reto", "text": "Llenar inscripciones de un programa de homeschooling con ticket alto (≈$20,500 por inscrito)." },
+      { "label": "Qué hicimos", "text": "Campañas en Meta y Google enfocadas en prospectos calificados, con seguimiento de conversión." },
+      { "label": "Resultado", "text": "23 inscritos en 3 meses y $472,650 MXN en ingresos con $42,000 de inversión." }
+    ],
+    "cta": "Ver caso completo"
+  },
+  "footer": {
+    "tagline": "Work that moves people.",
+    "location": "Puebla, México",
+    "writeUs": "Escríbenos",
+    "cta": "Hablemos",
+    "socialLabel": "Síguenos",
+    "legal": ["Aviso de privacidad", "Política de cookies", "Términos y condiciones"],
+    "rights": "© 2026 GBO Marketing Experts. Todos los derechos reservados.",
+    "logoAlt": "GBO Marketing Experts"
+  },
+  "shared": {
+    "email": "hola@gbomkt.com",
+    "platforms": ["Google Ads", "Meta", "Instagram", "TikTok", "LinkedIn"],
+    "socials": [
+      { "name": "Instagram", "url": "https://www.instagram.com/gbomarketingexperts/" },
+      { "name": "Facebook", "url": "https://www.facebook.com/gbomarketingexperts" },
+      { "name": "TikTok", "url": "https://www.tiktok.com/@gbomarketingexperts" },
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/company/gbomarketingexperts/" }
+    ],
+    "clientLogos": [
+      { "file": "centro-diagnostico-mena.webp", "name": "Centro Diagnóstico Mena", "treat": "plain" },
+      { "file": "christus-muguerza.webp", "name": "Christus Muguerza", "treat": "plain" },
+      { "file": "pintumex.webp", "name": "Pintumex", "treat": "dark" },
+      { "file": "azoul-fit.webp", "name": "Czoul Fit", "treat": "plain" },
+      { "file": "settepi.webp", "name": "Settepi", "treat": "dark" },
+      { "file": "kiwi-networks.webp", "name": "Kiwi Networks", "treat": "plain" },
+      { "file": "mer-capital.webp", "name": "Mercapital", "treat": "dark" },
+      { "file": "home-is-cool.webp", "name": "Home is Cool", "treat": "plain" },
+      { "file": "midexacto.svg", "name": "Midexacto 3D", "treat": "dark" },
+      { "file": "tg.webp", "name": "TG", "treat": "dark" },
+      { "file": "alensa.webp", "name": "Alensa", "treat": "plain" },
+      { "file": "good-mind-homeschool.webp", "name": "Good Mind homeschool", "treat": "plain" }
+    ]
+  }
+}

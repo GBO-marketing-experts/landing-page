@@ -1,0 +1,46 @@
+---
+import RiseText from './RiseText.astro';
+const { t } = Astro.props;
+// Videos are branded placeholders. Drop a YouTube id into data-video-id to swap
+// in a real embed; nothing fake ships in the meantime.
+const videos = t.cases.videos;
+---
+<section id="casos" class="band border-t border-ink/10 py-20 md:py-28">
+  <div class="shell">
+    <h2 class="t-display t-section mt-4 max-w-4xl" data-rise>
+      <RiseText text={t.cases.h2a} /><RiseText text={t.cases.h2b} lead /><span class="srise"><span class="dot">.</span></span>
+    </h2>
+    <p class="t-lead mt-6 max-w-xl text-k80">{t.cases.lead}</p>
+
+    <!-- Offset pair, not a symmetric two-up grid. -->
+    <div class="mt-14 grid gap-8 md:mt-20 md:grid-cols-2 md:gap-10">
+      {videos.map((v, i) => (
+        <figure class={`reveal ${i === 1 ? 'md:mt-20' : ''}`}>
+          <div
+            class="band on-ink relative flex aspect-video items-center justify-center overflow-hidden"
+            data-video-id=""
+            data-video-client={v.client}
+          >
+            <div class="grad-field absolute inset-0 opacity-25" aria-hidden="true"></div>
+            <button
+              type="button"
+              class="relative flex h-20 w-20 items-center justify-center rounded-full bg-dot text-ink transition-transform hover:scale-105 md:h-24 md:w-24"
+              aria-label={`${t.cases.playLabel} ${v.client}`}
+              disabled
+            >
+              <svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true">
+                <path d="M0 0l22 13L0 26z" fill="currentColor" />
+              </svg>
+            </button>
+            <span class="eyebrow absolute bottom-4 left-4 opacity-80">{t.cases.videoPending}</span>
+          </div>
+          <figcaption class="mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <span class="font-mono text-xs tracking-[0.16em] uppercase text-dot">{v.n}</span>
+            <span class="t-sub" style="font-size:clamp(1.125rem,1.6vw,1.5rem)">{v.client}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+  </div>
+</section>

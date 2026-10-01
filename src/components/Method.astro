@@ -1,0 +1,35 @@
+---
+import RiseText from './RiseText.astro';
+const { t } = Astro.props;
+---
+<section id="servicios" class="band py-20 md:py-28">
+  <div class="shell">
+    <h2 class="t-display t-section mt-4 max-w-4xl" data-rise>
+      <RiseText text={t.method.h2a} /><RiseText text={t.method.h2b} lead /><span class="srise"><span class="dot">.</span></span>
+    </h2>
+
+    <!-- Timeline on a hairline, not two cards. -->
+    <ol class="mt-16 border-l border-ink/15 pl-8 md:mt-20 md:pl-16">
+      {t.method.steps.map((step, i) => (
+        <li class={`reveal relative ${i < t.method.steps.length - 1 ? 'pb-14 md:pb-20' : ''}`}>
+          <span
+            class="absolute -left-[calc(2rem+6px)] top-2 h-3 w-3 rounded-full bg-dot md:-left-[calc(4rem+6px)]"
+            aria-hidden="true"
+          ></span>
+          <p class="font-mono text-xs tracking-[0.16em] uppercase text-dot">{step.label}</p>
+          <h3 class="t-sub mt-3 max-w-3xl">{step.title}</h3>
+          <div class="mt-6 grid max-w-5xl gap-6 md:grid-cols-2 md:gap-10">
+            {step.points.map((p) => <p class="t-lead text-k80">{p}</p>)}
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="mt-14 md:mt-16">
+      <a href="#contacto" class="pill-cta" data-cta="contact">
+        {t.method.cta}
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>

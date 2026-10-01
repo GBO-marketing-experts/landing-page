@@ -1,0 +1,32 @@
+---
+const { t } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const logos = t.shared.clientLogos;
+---
+<!-- Top strip. Board had the template's yellow; GBO asked for black from the palette. -->
+<div class="band on-ink">
+  <div class="shell flex flex-col gap-6 py-7 md:flex-row md:items-center md:justify-between md:gap-10">
+    <div class="max-w-xl flex-none">
+      <p class="eyebrow">{t.strip.eyebrow}</p>
+      <p class="t-sub mt-2">{t.strip.tagline}</p>
+    </div>
+
+    <div class="marquee overflow-hidden md:max-w-[46%]" aria-label={t.clients.eyebrow}>
+      <div class="marquee-track items-center">
+        {[0, 1].map((dup) =>
+          logos.map((l) => (
+            <span class="flex flex-none items-center pr-12" aria-hidden={dup === 1 ? 'true' : undefined}>
+              <img
+                src={`${base}clientes/${l.file}`}
+                alt={dup === 1 ? '' : l.name}
+                loading="lazy"
+                decoding="async"
+                class={`client-logo client-logo--sm ${l.treat === 'dark' ? 'lt-dark' : ''}`}
+              />
+            </span>
+          ))
+        )}
+      </div>
+    </div>
+  </div>
+</div>

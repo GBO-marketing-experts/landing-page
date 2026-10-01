@@ -1,0 +1,28 @@
+---
+import RiseText from './RiseText.astro';
+const { t } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const logos = t.shared.clientLogos;
+---
+<section class="band on-ink py-20 md:py-28">
+  <div class="shell">
+    <h2 class="t-display t-section mt-4 max-w-3xl" data-rise>
+      <RiseText text={t.clients.h2a} /><RiseText text={t.clients.h2b} lead /><span class="srise"><span class="dot">.</span></span>
+    </h2>
+
+    <!-- Rules between rows, not boxes around cells. -->
+    <ul class="mt-14 grid grid-cols-2 border-b border-paper/10 md:grid-cols-3 lg:grid-cols-4">
+      {logos.map((l) => (
+        <li class="flex min-h-28 items-center justify-center border-t border-paper/10 px-5 py-8 md:min-h-32">
+          <img
+            src={`${base}clientes/${l.file}`}
+            alt={l.name}
+            loading="lazy"
+            decoding="async"
+            class={`client-logo ${l.treat === 'dark' ? 'lt-dark' : ''}`}
+          />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

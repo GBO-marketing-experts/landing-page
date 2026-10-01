@@ -1,0 +1,79 @@
+---
+import RiseText from './RiseText.astro';
+const { t } = Astro.props;
+// Short qualifying form (Cambios §14): nombre, empresa, WhatsApp, giro,
+// presupuesto mensual. Static host, no backend yet: submit composes a mailto
+// to shared.email. Swap the submit handler for a Formspree/endpoint POST when
+// GBO decides on one.
+const f = t.contact.form;
+---
+<section id="contacto" class="band on-ink py-20 md:py-28">
+  <div class="shell grid gap-14 lg:grid-cols-12 lg:gap-10">
+    <div class="lg:col-span-6">
+      <h2 class="t-display t-section mt-4" data-rise>
+        <RiseText text={t.contact.h2a} /><RiseText text={t.contact.h2b} lead cls="grad-text" /><span class="srise"><span class="dot">.</span></span>
+      </h2>
+      <div class="mt-8 max-w-xl space-y-5">
+        {t.contact.body.map((p) => <p class="t-lead text-paper/75">{p}</p>)}
+      </div>
+
+      <p class="eyebrow mt-10">{t.contact.writeUs}</p>
+      <a href="#" data-cta="email" class="mt-2 block break-all text-xl font-medium underline decoration-dot decoration-2 underline-offset-[6px]">
+        {t.shared.email}
+      </a>
+    </div>
+
+    <form
+      id="contact-form"
+      class="contact-form lg:col-span-5 lg:col-start-8 lg:self-center"
+      data-email={t.shared.email}
+      data-subject={f.mailSubject}
+      novalidate
+    >
+      <div class="grid gap-6 sm:grid-cols-2">
+        <label class="field">
+          <span>{f.name}</span>
+          <input type="text" name={f.name} autocomplete="name" required />
+        </label>
+        <label class="field">
+          <span>{f.company}</span>
+          <input type="text" name={f.company} autocomplete="organization" />
+        </label>
+        <label class="field">
+          <span>{f.whatsapp}</span>
+          <input type="tel" name={f.whatsapp} autocomplete="tel" required />
+        </label>
+        <label class="field">
+          <span>{f.industry}</span>
+          <input type="text" name={f.industry} />
+        </label>
+        <label class="field sm:col-span-2">
+          <span>{f.budget}</span>
+          <select name={f.budget}>
+            <option value="" selected>—</option>
+            {f.budgetOptions.map((o) => <option value={o}>{o}</option>)}
+          </select>
+        </label>
+      </div>
+      <button type="submit" class="pill-cta mt-8">
+        {f.submit}
+        <span aria-hidden="true">&rarr;</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  // ponytail: mailto compose until GBO picks a real endpoint; swap this
+  // handler for a fetch() POST then.
+  const form = document.getElementById('contact-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const body = [...new FormData(form).entries()]
+      .filter(([, v]) => String(v).trim())
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n');
+    location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent(form.dataset.subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>

@@ -1,0 +1,10 @@
+---
+// Splits text into per-word overflow masks for the scroll-triggered rise.
+// Real spaces between masks (not margins) so line wraps keep a clean left edge.
+// `lead` adds a space before the first word — set it when another RiseText precedes.
+const { text, cls, lead = false } = Astro.props;
+const words = String(text).split(' ');
+---
+{words.map((w, i) => (
+  <>{(i > 0 || lead) ? ' ' : ''}<span class="srise"><span class={cls}>{w}</span></span></>
+))}

@@ -1,0 +1,47 @@
+---
+import RiseText from './RiseText.astro';
+const { t } = Astro.props;
+---
+<section id="por-que" class="band border-t border-ink/10 py-20 md:py-28">
+  <div class="shell">
+    <h2 class="t-display t-section mt-4 max-w-4xl" data-rise>
+      <RiseText text={t.reasons.h2a} /><RiseText text={t.reasons.h2b} lead /><span class="srise"><span class="dot">.</span></span>
+    </h2>
+    <p class="t-lead mt-6 max-w-xl text-k80">{t.reasons.sub}</p>
+
+    <ol class="mt-16">
+      {t.reasons.items.map((item, i) => (
+        <li class="reveal rule grid gap-6 py-10 md:grid-cols-12 md:gap-10 md:py-14">
+          <!-- Oversized outlined numeral, bleeding past its column. -->
+          <div class="md:col-span-2">
+            <span
+              class="block font-mono leading-none"
+              style="font-size:clamp(3.5rem,11vw,8rem);-webkit-text-stroke:1.5px var(--color-dot);-webkit-text-fill-color:transparent;opacity:0.55;margin-left:-0.06em"
+              aria-hidden="true"
+            >{item.n}</span>
+          </div>
+
+          <!-- Alternating offset so the list never reads as a grid of cards. -->
+          <div class={i % 2 === 1 ? 'md:col-span-9 md:col-start-4' : 'md:col-span-10 md:col-start-3'}>
+            <h3 class="t-sub max-w-2xl">{item.title}</h3>
+            <div class="mt-5 max-w-2xl space-y-4">
+              {item.points.map((p) => (
+                <p class="flex gap-3">
+                  <span class="flex-none font-mono text-dot" aria-hidden="true">&rarr;</span>
+                  <span class="t-lead text-k80">{p}</span>
+                </p>
+              ))}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="rule pt-10">
+      <a href="#contacto" class="pill-cta" data-cta="contact">
+        {t.reasons.cta}
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>

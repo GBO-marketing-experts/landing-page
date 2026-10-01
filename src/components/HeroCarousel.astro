@@ -1,0 +1,50 @@
+---
+const { t } = Astro.props;
+// SAMY-reference hero: full-bleed looping imagery behind a big statement.
+// Photos are the Carousel1.zip set — stock stand-ins until GBO shoots the team
+// (the board asks for "una imagen estilo animación donde salgamos los del equipo").
+const slides = [1, 2, 3, 4, 5];
+const base = import.meta.env.BASE_URL;
+---
+<section class="on-ink relative flex min-h-[72svh] flex-col justify-end md:min-h-[86svh]">
+  <div class="ken-frame" aria-hidden="true">
+    {slides.map((n, i) => (
+      <img
+        src={`${base}carousel/carousel-${n}.webp`}
+        alt=""
+        width="1920"
+        height="1080"
+        loading={i === 0 ? 'eager' : 'lazy'}
+        decoding="async"
+        class="ken-slide"
+          />
+    ))}
+    <div class="ken-scrim"></div>
+  </div>
+
+  <div class="shell relative flex flex-col gap-8 pb-14 md:flex-row md:items-end md:justify-between md:gap-16 md:pb-20">
+    <p class="t-display" style="font-size:clamp(3.25rem,9vw,8.5rem)">
+      {t.carousel.h.split(' ').map((w, i) => (
+        <span class="rise"><span style={`--rise-delay:${i * 0.14}s`}>{w}</span></span>
+      ))}<span class="rise tight"><span class="dot" style={`--rise-delay:${t.carousel.h.split(' ').length * 0.14}s`}>.</span></span>
+    </p>
+    <div class="fade-late max-w-xs md:pb-3">
+      <p class="t-lead text-paper/85">{t.carousel.sub}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Crossfade cycle. Deliberately JS-driven: a class toggle + CSS transition is
+  // deterministic where a 5-delay infinite-keyframe stack proved flaky.
+  const slides = [...document.querySelectorAll('.ken-slide')];
+  let cur = 0;
+  slides[0]?.classList.add('is-on');
+  if (slides.length > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(() => {
+      slides[cur].classList.remove('is-on');
+      cur = (cur + 1) % slides.length;
+      slides[cur].classList.add('is-on');
+    }, 5000);
+  }
+</script>

@@ -1,0 +1,30 @@
+---
+import RiseText from './RiseText.astro';
+const { t } = Astro.props;
+---
+<section class="band relative overflow-hidden">
+  <!-- The gradient as a large soft FIELD, used once. -->
+  <div
+    class="grad-field pointer-events-none absolute -top-40 right-[-15%] h-[42rem] w-[42rem] rounded-full opacity-20 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="shell pt-14 pb-20 md:pt-20 md:pb-28">
+    <div class="reveal">
+      <h1 class="t-display t-hero max-w-5xl" data-rise>
+        <RiseText text={t.hero.h1a} /><RiseText text={t.hero.h1b} lead cls="grad-text" /><span class="srise"><span class="dot">.</span></span>
+      </h1>
+
+      <p class="t-lead mt-8 max-w-2xl">{t.hero.lead}</p>
+
+      <div class="mt-9 flex flex-wrap items-center gap-3">
+        <a href="#contacto" class="pill-cta" data-cta="contact">
+          {t.hero.cta}
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+        <a href="#casos" class="pill">{t.hero.ctaSecondary}</a>
+      </div>
+
+    </div>
+  </div>
+</section>

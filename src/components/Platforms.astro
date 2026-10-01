@@ -1,0 +1,31 @@
+---
+import RiseText from './RiseText.astro';
+const { t } = Astro.props;
+// GBO: "esta parte la dejaría tal cual el texto y el sub texto" -> copy is verbatim.
+// GBO: "se tiene que quitar Spotify y Pinterest" -> already absent from shared.platforms.
+const platforms = t.shared.platforms;
+---
+<section class="band border-t border-ink/10 py-20 md:py-28">
+  <div class="shell">
+    <h2 class="t-display t-section mt-4 max-w-4xl" data-rise>
+      <RiseText text={t.platforms.h2a} /><RiseText text={t.platforms.h2b} lead /><span class="srise"><span class="dot">.</span></span>
+    </h2>
+    <p class="t-lead mt-6 max-w-xl text-k80">{t.platforms.sub}</p>
+  </div>
+
+  <div class="marquee mt-14 overflow-hidden md:mt-20">
+    <div class="marquee-track items-center">
+      {[0, 1].map((dup) =>
+        platforms.map((p) => (
+          <span
+            class="flex flex-none items-center gap-7 pr-14"
+            aria-hidden={dup === 1 ? 'true' : undefined}
+          >
+            <span class="t-display" style="font-size:clamp(1.5rem,4vw,3rem)">{p}</span>
+            <span class="h-2.5 w-2.5 flex-none rounded-full bg-dot"></span>
+          </span>
+        ))
+      )}
+    </div>
+  </div>
+</section>

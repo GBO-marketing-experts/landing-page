@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "lang": "en",
+    "title": "Paid Media Agency in Puebla | GBO",
+    "description": "Paid Media agency in Puebla, Mexico. Google Ads, Meta, TikTok and LinkedIn campaigns measured in sales, not likes. You work directly with the partners.",
+    "skip": "Skip to main content"
+  },
+  "nav": {
+    "why": "Why us",
+    "services": "Services",
+    "cases": "Case Studies",
+    "contact": "Let's talk",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "menuTitle": "Menu",
+    "langTitle": "Language",
+    "langEs": "Español",
+    "langEn": "English"
+  },
+  "strip": {
+    "eyebrow": "Paid Media Agency in Puebla",
+    "tagline": "You come for the team. You stay for the results."
+  },
+  "carousel": {
+    "h": "We are GBO",
+    "sub": "An agency based in Puebla with clients across Mexico."
+  },
+  "hero": {
+    "h1a": "The Paid Media agency built around",
+    "h1b": "results",
+    "lead": "We think like strategists and talk straight — person to person. We're an agency based in Puebla with clients across Mexico.",
+    "cta": "Let's talk",
+    "ctaSecondary": "See cases"
+  },
+  "reasons": {
+    "h2a": "Why choose",
+    "h2b": "GBO",
+    "sub": "Four reasons to start with.",
+    "items": [
+      {
+        "n": "01",
+        "title": "We speak in sales, not likes",
+        "points": [
+          "We don't celebrate likes or hand over vanity reports. We measure qualified leads, sales and return on your investment.",
+          "We optimize weekly so every peso works on every platform and every stage of the funnel."
+        ]
+      },
+      {
+        "n": "02",
+        "title": "Total transparency: you always know what we do and why",
+        "points": [
+          "You'll know what we're working on, the strategy behind every ad and what results to expect.",
+          "Clear reports, in plain language, so you decide with data — not hunches."
+        ]
+      },
+      {
+        "n": "03",
+        "title": "We're on every platform that matters",
+        "points": [
+          "Your ideal customer doesn't live on a single platform, and neither do we. We coordinate campaigns across Google Ads, Meta Ads, TikTok Ads and LinkedIn Ads so your brand shows up in the right place at the right moment.",
+          "We don't launch isolated ads; we build strategies that connect every touchpoint to maximize results from the first click to the closed sale."
+        ]
+      },
+      {
+        "n": "04",
+        "title": "You work directly with the partners",
+        "points": [
+          "Every account has a partner in charge who knows your business end to end. No junior middlemen, no new account executive every three months.",
+          "We don't improvise with your money: we analyze, execute and optimize."
+        ]
+      }
+    ],
+    "cta": "Let's talk"
+  },
+  "clients": {
+    "eyebrow": "Clients",
+    "h2a": "They already trust",
+    "h2b": "us",
+    "pending": "Logo wall pending — it gets completed once the brand files come in."
+  },
+  "method": {
+    "h2a": "How we",
+    "h2b": "work",
+    "steps": [
+      {
+        "label": "Step 1",
+        "title": "Diagnosis",
+        "points": [
+          "We review your campaigns, your site and your numbers to see what works and what's costing you money without results."
+        ]
+      },
+      {
+        "label": "Step 2",
+        "title": "Strategy",
+        "points": [
+          "We analyze your market, your competitors and your ideal customer to define where to invest and with what message."
+        ]
+      },
+      {
+        "label": "Step 3",
+        "title": "Launch and testing",
+        "points": [
+          "We create the ads, test variants and adjust from week one. A campaign is never finished."
+        ]
+      },
+      {
+        "label": "Step 4",
+        "title": "Measurement and reporting",
+        "points": [
+          "Every month we show you what was invested, what came back and what we'll do next."
+        ]
+      }
+    ],
+    "cta": "Let's talk"
+  },
+  "platforms": {
+    "h2a": "Google Ads + Social Ads:",
+    "h2b": "we give it everything",
+    "sub": "Wherever your customers are, that's where our campaigns run."
+  },
+  "contact": {
+    "h2a": "We want to",
+    "h2b": "know you",
+    "body": [
+      "Tell us what your company does, what you want to achieve and what you've tried so far.",
+      "We reply within 24 business hours with a first proposal of how we can help."
+    ],
+    "writeUs": "Write to us",
+    "cta": "Let's talk",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "whatsapp": "WhatsApp",
+      "industry": "Your industry",
+      "budget": "Monthly ad budget",
+      "budgetOptions": ["$10,000 – $20,000 MXN", "$20,000 – $30,000 MXN", "$30,000 – $40,000 MXN"],
+      "submit": "Let's talk",
+      "mailSubject": "New lead from the GBO website"
+    }
+  },
+  "cases": {
+    "h2a": "We speak in numbers, not in",
+    "h2b": "promises",
+    "lead": "These are some of the businesses we've helped grow with Paid Media focused on profitability.",
+    "videos": [
+      { "n": "Video 01", "client": "Centro Diagnóstico Mena" },
+      { "n": "Video 02", "client": "Colegio Le Bret / Valeria Segura" }
+    ],
+    "playLabel": "Play video from",
+    "videoPending": "Video pending"
+  },
+  "results": {
+    "h2a": "Success measured in",
+    "h2b": "results",
+    "figure": "+10x",
+    "figureCaption": "What every peso invested returned.",
+    "figureDetail": "Home is Cool: $472,650 MXN in enrollments from a $42,000 MXN investment, in 3 months.",
+    "case": [
+      { "label": "Challenge", "text": "Filling enrollments for a homeschooling program with a high ticket (≈$20,500 per student)." },
+      { "label": "What we did", "text": "Meta and Google campaigns focused on qualified leads, with conversion tracking." },
+      { "label": "Result", "text": "23 enrollments in 3 months and $472,650 MXN in revenue from a $42,000 investment." }
+    ],
+    "cta": "See the full case"
+  },
+  "footer": {
+    "tagline": "Work that moves people.",
+    "location": "Puebla, México",
+    "writeUs": "Write to us",
+    "cta": "Let's talk",
+    "socialLabel": "Follow us",
+    "legal": ["Privacy notice", "Cookie policy", "Terms and conditions"],
+    "rights": "© 2026 GBO Marketing Experts. All rights reserved.",
+    "logoAlt": "GBO Marketing Experts"
+  },
+  "shared": {
+    "email": "hola@gbomkt.com",
+    "platforms": ["Google Ads", "Meta", "Instagram", "TikTok", "LinkedIn"],
+    "socials": [
+      { "name": "Instagram", "url": "https://www.instagram.com/gbomarketingexperts/" },
+      { "name": "Facebook", "url": "https://www.facebook.com/gbomarketingexperts" },
+      { "name": "TikTok", "url": "https://www.tiktok.com/@gbomarketingexperts" },
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/company/gbomarketingexperts/" }
+    ],
+    "clientLogos": [
+      { "file": "centro-diagnostico-mena.webp", "name": "Centro Diagnóstico Mena", "treat": "plain" },
+      { "file": "christus-muguerza.webp", "name": "Christus Muguerza", "treat": "plain" },
+      { "file": "pintumex.webp", "name": "Pintumex", "treat": "dark" },
+      { "file": "azoul-fit.webp", "name": "Czoul Fit", "treat": "plain" },
+      { "file": "settepi.webp", "name": "Settepi", "treat": "dark" },
+      { "file": "kiwi-networks.webp", "name": "Kiwi Networks", "treat": "plain" },
+      { "file": "mer-capital.webp", "name": "Mercapital", "treat": "dark" },
+      { "file": "home-is-cool.webp", "name": "Home is Cool", "treat": "plain" },
+      { "file": "midexacto.svg", "name": "Midexacto 3D", "treat": "dark" },
+      { "file": "tg.webp", "name": "TG", "treat": "dark" },
+      { "file": "alensa.webp", "name": "Alensa", "treat": "plain" },
+      { "file": "good-mind-homeschool.webp", "name": "Good Mind homeschool", "treat": "plain" }
+    ]
+  }
+}

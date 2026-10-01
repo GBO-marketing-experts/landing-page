@@ -1,0 +1,49 @@
+---
+import Nav from './Nav.astro';
+import LogoStrip from './LogoStrip.astro';
+import Hero from './Hero.astro';
+import HeroCarousel from './HeroCarousel.astro';
+import Reasons from './Reasons.astro';
+import LogoWall from './LogoWall.astro';
+import Method from './Method.astro';
+import Platforms from './Platforms.astro';
+import Contact from './Contact.astro';
+import Cases from './Cases.astro';
+import Results from './Results.astro';
+import Footer from './Footer.astro';
+
+const { t, lang } = Astro.props;
+---
+<LogoStrip t={t} />
+<Nav t={t} lang={lang} />
+<main id="main">
+  <HeroCarousel t={t} />
+  <Hero t={t} />
+  <Reasons t={t} />
+  <LogoWall t={t} />
+  <Method t={t} />
+  <Platforms t={t} />
+  <Contact t={t} />
+  <Cases t={t} />
+  <Results t={t} />
+</main>
+<Footer t={t} lang={lang} />
+<script>
+  // Scroll-triggered heading rise. Class-toggle + transitions, same pattern as
+  // the hero carousel; plays once per heading.
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        e.target
+          .querySelectorAll('.srise > span')
+          .forEach((sp, i) => sp.style.setProperty('--rd', `${i * 0.06}s`));
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      }
+    },
+    { threshold: 0.3 }
+  );
+  document.querySelectorAll('[data-rise]').forEach((h) => io.observe(h));
+</script>
